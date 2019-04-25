@@ -1,0 +1,360 @@
+*,
+*:before,
+*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%; 
+}
+
+body{
+    box-sizing: border-box; 
+    font-family: sans-serif;
+    color: #4e4e4e;
+}
+
+
+.header{
+    position: relative;
+    overflow: hidden;
+    height: 8rem;     
+
+    display: flex; 
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column;
+    padding: 0 1.5rem;     
+    text-transform: uppercase;
+
+    &:after{
+        content: "";
+        width: 11rem;
+        height: 20rem; 
+        background: steelblue;
+        position: absolute;
+        right: -1.7rem;
+        bottom: -7rem;
+        transform: rotate(43deg);
+    }
+
+    &:before{
+        content: "";
+        width: 15rem;
+        height: 22rem;
+        background: #3e5c76;
+        position: absolute;
+        right: 1.9rem;
+        bottom: -8rem;
+        transform: rotate(43deg);
+    }
+    
+    &__job-title{
+        font-weight: bold;
+        color: steelblue;
+    }
+
+    &__logo{
+        background: #a0d2ff;
+        height: 12rem;
+        width: 12rem;
+        position: absolute;
+        right: 12.5rem;
+        bottom: 6.5rem;
+        transform: rotate(-47deg);
+        z-index: -1;
+    }
+}
+
+.main{
+    display: flex;
+    height: calc(100vh - ( 5rem + 8rem )); 
+
+    .side{
+        background: #333;
+        width: 30rem;
+        padding: 1.5rem;
+        overflow-y: auto;        
+
+        .section:last-child{
+            margin: 0; 
+        } 
+    }
+     
+    .content{
+        flex:1;
+        background: rgba(249, 249, 249, 0.32);
+        padding: 1.5rem;
+        overflow-y: auto;        
+    }
+}
+
+.profile{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &__photo{
+        width:12rem;
+        height:15rem; 
+        background: #ddd;
+        margin-right: 1.5rem;
+    }
+
+    &__description{
+        flex:1;
+        font-size: 1.2rem; 
+    }
+}
+
+.experience{
+    display: grid;
+    grid-gap: 0; 
+    grid-template-columns: 1fr 20rem;
+    grid-template-rows: repeat(2, 1.75rem) 1fr;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    
+    &__company{
+        text-transform: uppercase;
+        color: steelblue;
+    }
+
+    &__date{
+        text-align: right;
+        color: steelblue;
+    }
+
+    &__job-title{
+        grid-column: 1 / -1;
+    }
+
+    &__job-description{
+        grid-column: 1 / -1;
+        padding: 0.5rem 0;
+    }
+}
+
+.education{
+    &__school {
+        color: steelblue;
+        text-transform: uppercase;
+
+        span{
+            float: right;
+            font-weight: normal;
+        }
+    }
+}
+
+.references{
+    ul{
+        margin-bottom: 2rem; 
+        
+        &:last-child{
+            margin: 0; 
+        }
+    }
+}
+
+ul{
+    li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        list-style: none;
+        color: #fff;
+        font-size: 1.2rem;
+        padding: 0.7rem 0; 
+        padding-left: 3rem;
+        position: relative;
+
+        &.html:before{ 
+            background-image: url(../images/html.png); 
+        }
+
+        &.node:before{ 
+            background-image: url(../images/node.png); 
+        }
+
+        &.scss:before{ 
+            background-image: url(../images/scss.png); 
+        }
+
+        &.javascript:before{ 
+            background-image: url(../images/javascript.png); 
+        }
+
+         
+        &.angular:before{ 
+            background-image: url(../images/angular.png); 
+        }
+        
+        &.swift:before{ 
+            background-image: url(../images/swift.png); 
+        }
+
+        &.php:before{ 
+            background-image: url(../images/php.png); 
+        }
+
+        &.mongo:before{ 
+            background-image: url(../images/mongo.png); 
+        }
+
+        &.mysql:before{ 
+            background-image: url(../images/mysql.png); 
+        }
+
+        &.birthday:before{ 
+            background-image: url(../images/birthday.png); 
+        }
+
+        &.email:before{ 
+            background-image: url(../images/email.png); 
+        }
+
+        &.mobile:before{ 
+            background-image: url(../images/mobile.png); 
+        }
+
+        &.address:before{ 
+            background-image: url(../images/address.png); 
+        }
+
+        &.person:before{ 
+            background-image: url(../images/person.png); 
+        }
+
+        &.coder:before{ 
+            background-image: url(../images/coder.png); 
+        }
+
+        &::before{
+            content: "";
+            width: 2rem;
+            height: 2rem; 
+            position: absolute;
+            left: 0;
+            top: 0;  
+            bottom: 0;
+            margin: auto; 
+
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: transparent;
+        }
+    } 
+}
+
+.rate{
+    display: flex;
+    align-items: center;
+
+    &__star { 
+        width: 1rem;
+        height: 1rem;
+        background: #fff;
+        border-radius: 50%;
+        margin: 0 .25rem;
+        
+        &--active{  
+            background: #3e5b75;
+        }
+
+        &--half{
+            background: linear-gradient(#3e5b75 60%, #fff 40%);            
+            transform: rotate(-90deg); 
+        }
+    }
+
+    &__score{
+        background: #4682b4;
+        color: #fff;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}
+
+
+
+.section{
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+
+    &--dark{
+        border-bottom: 2px solid #424242;
+         
+        .section__title{
+            color: #fff;
+        }
+    }
+     
+    &__title{
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        position: relative;
+        padding-left: 3rem;
+        overflow: hidden;
+
+        &:after{ 
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            left: -1.5rem;
+            bottom: 0;
+            background: steelblue;
+            transform: rotate(40deg);
+        }
+
+        &:before{ 
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            left: -1.2rem;
+            bottom: -1.5rem;
+            background: #a0d2ff;
+            transform: rotate(143deg);
+        }
+    }
+}
+
+.footer{
+    background:steelblue;
+    height: 5rem;
+}
+
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+h4{
+    font-size: 1.5rem;
+}
+
+h5{
+    font-size: 1.2rem;
+} 

@@ -1,0 +1,26 @@
+1. install node 
+2. npm init
+3. npm install --save-dev node-sass
+4. compile scss file, create scripts on package.json. then run
+npm run compile:sass
+
+"scripts": {
+    "compile:sass": "node-sass scss/main.scss css/styles.css"
+  },
+
+5. add -w to always watch changes
+
+"scripts": {
+    "compile:sass": "node-sass scss/main.scss css/styles.css -w"
+  },
+
+OR add --output-style compressed to minify
+
+"scripts": {
+    "compile:sass": "node-sass scss/main.scss css/styles.css -w --output-style compressed"
+  },
+
+
+6. npm install live-server
+7. npm run live-server and npm run compile:sass
+
