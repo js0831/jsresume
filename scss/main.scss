@@ -8,12 +8,16 @@
 
 html{
     font-size: 62.5%; 
-}
+    background: #eee;
+}  
 
 body{
     box-sizing: border-box; 
     font-family: sans-serif;
     color: #4e4e4e;
+    width: 1000px;
+    margin: auto;
+    background: #fff;
 }
 
 
@@ -70,7 +74,7 @@ body{
 
 .main{
     display: flex;
-    height: calc(100vh - ( 5rem + 8rem )); 
+    // height: calc(100vh - ( 5rem + 8rem )); 
 
     .side{
         background: #333;
