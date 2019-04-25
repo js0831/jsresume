@@ -33,23 +33,25 @@ body{
     padding: 0 1.5rem;     
     text-transform: uppercase;
 
+    &:before, &:after{
+        content: ""; 
+        position: absolute;
+        z-index: 2;
+    }
     &:after{
         content: "";
         width: 11rem;
         height: 20rem; 
         background: steelblue;
-        position: absolute;
         right: -1.7rem;
         bottom: -7rem;
         transform: rotate(43deg);
     }
 
-    &:before{
-        content: "";
+    &:before{ 
         width: 15rem;
         height: 22rem;
-        background: #3e5c76;
-        position: absolute;
+        background: #3e5c76; 
         right: 1.9rem;
         bottom: -8rem;
         transform: rotate(43deg);
@@ -68,7 +70,7 @@ body{
         right: 12.5rem;
         bottom: 6.5rem;
         transform: rotate(-47deg);
-        z-index: -1;
+        z-index: 1;
     }
 }
 
@@ -315,7 +317,7 @@ ul{
 
         &:after{ 
             content: "";
-            width: 3rem;
+            width: 3rem; 
             height: 3rem;
             position: absolute;
             left: -1.5rem;
