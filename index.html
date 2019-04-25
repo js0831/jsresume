@@ -206,10 +206,10 @@
                 <div class="section__content references">
                     <ul>
                         <li class="person">
-                            Aizamel Cemanes
+                            Coleen Natalaray
                         </li>
                         <li class="coder">
-                            Java Programmer @ IT Resources Inc.
+                            Business Analyst @ ESSPI.
                         </li>
                         <li class="mobile">
                             09454773638
@@ -319,91 +319,7 @@
     
     </div>
 
-    <script>
-        var toSort = [
-            9,4,1,7,6,3,8,2
-        ]
-        
-        let loop = 0;
-
-        function quickSortA(array, startIndex, lastIndex){
-            loop ++;            
-            if(lastIndex === 0 )return;  
-            const itemA = array[startIndex];
-            const itemB = array[lastIndex];
-
-            if(itemB < itemA && lastIndex> startIndex){
-                swap(array, startIndex, lastIndex);
-            }
-            console.log(loop +' | '+startIndex+' ('+ itemA + '): '+ lastIndex +'(' + itemB +') = '+ toSort );
-            const newStart = startIndex == lastIndex ? 0 : startIndex + 1;
-            const newEnd = startIndex == lastIndex ? (lastIndex - 1) : lastIndex;
-            // setTimeout(function(){
-                quickSortA(array, newStart, newEnd);
-            // },1000);                
-        }
-
-        function quickSortB(array, startIndex, lastIndex){
-            loop++;
-            const itemA = array[startIndex];
-            const itemB = array[lastIndex];
-            
-            if(startIndex === 0 && lastIndex === 0)return;
-            console.log(loop+ ' : ' +startIndex +' = '+ lastIndex);
-            if(itemB < itemA){
-                swap(array, startIndex, lastIndex);
-            }            
-
-            let newStartIndex = startIndex + 1;
-            let newLastIndex = lastIndex;
-
-            if(newStartIndex == lastIndex){
-                newLastIndex--;
-                newStartIndex = 0;
-            }
-
-            // console.log(toSort);
-            // setTimeout(function(){
-                quickSortB(array, newStartIndex, newLastIndex)
-            // },100);
-        }
-
-        function quickSortC(array , startIndex, lastIndex){
-            loop++;
-            const itemA = array[startIndex];
-            const itemB = array[lastIndex];
-  
-            if( itemB < itemA){
-                swap(array, startIndex, lastIndex);                
-            }      
-            
-            let newItemAIndex = startIndex + 1;
-            let newItemBIndex = lastIndex + 1;
-            
-            if(newItemBIndex == toSort.length){
-                newItemAIndex = 0;
-                newItemBIndex = 1;
-            }
-            console.log('('+loop+')' + newItemAIndex+ ' : ' +newItemBIndex + '=' + toSort);
-
-            setTimeout(function(){
-                quickSortC(array , newItemAIndex, newItemBIndex);
-            },500);
-        }
-
-        function swap(array , itemAIndex, itemBIndex){
-            const itemA = array[itemAIndex];
-            const itemB = array[itemBIndex];            
-
-            array[itemAIndex]=itemB
-            array[itemBIndex]=itemA;
-        }
-
-        // quickSortC(toSort,0,1);
-        // quickSortB(toSort,0,toSort.length - 1);
-
-        // toSort.sort();
-        console.log(toSort);
+    <script> 
     </script>
 </body>
 </html>
