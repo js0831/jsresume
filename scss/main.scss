@@ -1,3 +1,36 @@
+/**
+RESPONSIVE
+**/
+// $breakpoint-large: 1400px; // greater than equal
+$breakpoint-medium: 825px;  // less than equal
+$breakpoint-small: 660px; // less than equal
+$breakpoint-smaller: 375px; // less than equal
+// $breakpoint-smallest: 400px; // less than equal
+
+
+@mixin responsive($breakpoint){
+    @if $breakpoint == m {
+        @media (max-width:$breakpoint-medium) {@content};
+    }
+
+    @if $breakpoint == s {
+        @media (max-width:$breakpoint-small) {@content};
+    }
+
+    @if $breakpoint == xs {
+        @media (max-width:$breakpoint-smaller) {@content};
+    } 
+
+    @if $breakpoint == xxs {
+        @media (max-width:$breakpoint-smallest) {@content};
+    } 
+
+    @if $breakpoint == l {
+        @media (min-width:$breakpoint-large) {@content}; 
+    } 
+}
+/**/
+
 *,
 *:before,
 *:after{
@@ -9,15 +42,22 @@
 html{
     font-size: 62.5%; 
     background: #eee;
+
+    @include responsive(xs){
+        font-size: 61%;
+    }
 }  
 
 body{
     box-sizing: border-box; 
     font-family: sans-serif;
     color: #4e4e4e;
-    width: 1000px;
+    width: 100%; 
+    max-width: 100rem;
     margin: auto;
     background: #fff;
+
+    
 }
 
 
@@ -36,7 +76,7 @@ body{
     &:before, &:after{
         content: ""; 
         position: absolute;
-        z-index: 2;
+        z-index: 2; 
     }
     &:after{
         content: "";
@@ -46,6 +86,10 @@ body{
         right: -1.7rem;
         bottom: -7rem;
         transform: rotate(43deg);
+
+        @include responsive(s){
+            right: -8rem;            
+        };
     }
 
     &:before{ 
@@ -55,6 +99,13 @@ body{
         right: 1.9rem;
         bottom: -8rem;
         transform: rotate(43deg);
+
+        @include responsive(s){
+            right: -9rem;            
+        };
+        @include responsive(xs){
+            right: -11rem;            
+        }; 
     }
     
     &__job-title{
@@ -71,11 +122,22 @@ body{
         bottom: 6.5rem;
         transform: rotate(-47deg);
         z-index: 1;
+
+        @include responsive(s){
+            right: 1rem;            
+        };
+
+        @include responsive(xs){
+            right: 0rem;            
+        };
     }
 }
 
 .main{
     display: flex;
+    @include responsive(s){
+        flex-flow: column-reverse;
+    };
     // height: calc(100vh - ( 5rem + 8rem )); 
 
     .side{
@@ -86,14 +148,26 @@ body{
 
         .section:last-child{
             margin: 0; 
-        } 
+        }
+        
+        @include responsive(m){
+            width:26rem;
+        }
+
+        @include responsive(s){
+            width: 100%;
+        };
     }
      
     .content{
         flex:1;
         background: rgba(249, 249, 249, 0.32);
         padding: 1.5rem;
-        overflow-y: auto;        
+        overflow-y: auto;  
+        
+        .section:last-child{
+            margin: 0; 
+        }  
     }
 }
 
@@ -124,6 +198,10 @@ body{
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
     
+    @include responsive(m){
+        grid-template-columns: 1fr;        
+    }
+
     &__company{
         text-transform: uppercase;
         color: steelblue;
@@ -132,6 +210,10 @@ body{
     &__date{
         text-align: right;
         color: steelblue;
+
+        @include responsive(m){
+            text-align: left;
+        }
     }
 
     &__job-title{
@@ -364,3 +446,5 @@ h4{
 h5{
     font-size: 1.2rem;
 } 
+
+
