@@ -142,7 +142,7 @@ body{
 
     .side{
         background: #333;
-        width: 30rem;
+        width: 28rem;
         padding: 1.5rem;
         overflow-y: auto;        
 
@@ -162,7 +162,8 @@ body{
     .content{
         flex:1;
         background: rgba(249, 249, 249, 0.32);
-        padding: 1.5rem;
+      
+      border-bottom: 1px dotted #ddd;  padding: 1.5rem;
         overflow-y: auto;  
         
         .section:last-child{
@@ -176,16 +177,41 @@ body{
     align-items: flex-start;
     justify-content: flex-start;
 
+    @include responsive(xs){
+        flex-flow: column;
+        align-items: center;
+    }
+
+
     &__photo{
         width:12rem;
         height:15rem; 
-        background: #ddd;
         margin-right: 1.5rem;
+        overflow: hidden;
+
+        @include responsive(xs){
+            border-radius: 50%;            
+            width: 15rem;
+            border: 5px solid #3e5b75;
+            margin: 0 0 2rem 0;
+        }
+
+        img{
+            height: auto;
+            width: 100%;
+            
+        }
     }
 
     &__description{
         flex:1;
         font-size: 1.2rem; 
+        line-height: 1.8rem;
+    }
+    strong{
+        color: steelblue;
+        border-bottom: 1px dotted;
+        font-weight: normal;    
     }
 }
 
@@ -220,9 +246,14 @@ body{
         grid-column: 1 / -1;
     }
 
-    &__job-description{
-        grid-column: 1 / -1;
-        padding: 0.5rem 0;
+    &__responsibility { 
+        padding-left: 1.5rem;
+        list-style: disc;
+        grid-column: 1/-1;
+
+        li { 
+            padding: .5rem 0; 
+        }
     }
 }
 
