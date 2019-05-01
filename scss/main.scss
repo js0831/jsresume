@@ -138,7 +138,7 @@ body{
     @include responsive(s){
         flex-flow: column-reverse;
     };
-    // height: calc(100vh - ( 5rem + 8rem )); 
+    // height: calc(100vh - ( 5rem + 8rem ));  
 
     .side{
         background: #333;
