@@ -142,7 +142,7 @@ body{
 
     .side{
         background: #333;
-        width: 28rem;
+        width: 26rem;
         padding: 1.5rem;
         overflow-y: auto;        
 
@@ -163,9 +163,13 @@ body{
         flex:1;
         background: rgba(249, 249, 249, 0.32);
       
-      border-bottom: 1px dotted #ddd;  padding: 1.5rem;
+        border-bottom: 1px dotted #ddd;  padding: 1.5rem;
         overflow-y: auto;  
         
+        .section{
+            margin-bottom: 1rem;
+        }
+
         .section:last-child{
             margin: 0; 
         }  
@@ -219,10 +223,11 @@ body{
     display: grid;
     grid-gap: 0; 
     grid-template-columns: 1fr 20rem;
-    grid-template-rows: repeat(2, 1.75rem) 1fr;
+    grid-template-rows: 1.75rem 2.25rem 1fr;
     border-bottom: 1px solid #dedede;
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
+    padding-bottom: .5rem;
     
     @include responsive(m){
         grid-template-columns: 1fr;        
@@ -231,6 +236,14 @@ body{
     &__company{
         text-transform: uppercase;
         color: steelblue;
+
+        .xp{
+            color: #ababab;
+            font-weight: normal;
+            font-style: italic;
+            text-transform: capitalize;
+            display: inline-block;
+        }
     }
 
     &__date{
@@ -252,7 +265,7 @@ body{
         grid-column: 1/-1;
 
         li { 
-            padding: .5rem 0; 
+            padding: .25rem 0; 
         }
     }
 }
